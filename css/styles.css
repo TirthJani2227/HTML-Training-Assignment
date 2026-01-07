@@ -1,0 +1,29 @@
+  body {
+    font-family:'Roboto', sans-serif;
+  }
+  .bg-background{
+    background-color: #FAFAFA;
+  }
+  .hero-image{
+    box-shadow:  0px 4px 31px #0000000A;;
+  }
+  .greetings{
+    color: #3E3E3E;
+  }
+
+  .bold-word{
+    color: #C8242F;
+  }
+  .input-field{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #ADADAD;
+    border-radius: 5px;
+  }
+
+  .login-btn{
+    background-color: #C8242F;
+    border-radius: 23px;
+  }
+  .login-btn:hover{
+    background-color: #5b0f14;
+  }
