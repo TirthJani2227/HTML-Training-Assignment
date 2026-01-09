@@ -7,167 +7,325 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="fonts.googleapis.com" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- MDB CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Inner Page</title>
+    <title>Analysis</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style></style>
   </head>
-  <body class="vw-100 overflow-x-hidden">
-    <header class="w-100">
-      <nav
-        class="navbar navbar-expand-md navbar-light bg-white w-100 d-flex p-3"
-      >
-        <div
-          class="navbar-brand d-flex gap-4 flex-row col-4 col-lg-2 p-3"
-          href="#"
-        >
-          <img
-            role="button"
-            src="../images/menu-bar.svg"
-            alt="Menu bar"
-            class="col-1 col-md-1 col-lg-2 col-xl-1 img-fluid"
-          />
-          <img
-            role="button"
-            src="../images/loginPage/logo.svg"
-            class="col-10 col-md-8 col-lg-10 col-xl-8 img-fluid"
-            alt="Logo bar"
-          />
-        </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse w-full px-4 col-10 col-lg-10 d-flex navbar-nav d-none d-md-block"
-          id="navbarSupportedContent"
-        >
-          <form class="d-flex me-auto align-items-center">
-            <div class="form-group has-search">
+  <body class="overflow-x-hidden">
+    <!-- Header -->
+    <header class="w-100 sticky-top bg-white border-bottom">
+      <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="d-flex px-3 w-100 justify-content-between">
+          <div class="navbar-brand d-flex align-items-center gap-3">
+            <button
+              class="btn btn-link p-0 border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarOffcanvas"
+            >
+              <img
+                src="../images/menu-bar.svg"
+                alt="Menu bar"
+                height="24"
+                width="24"
+              />
+            </button>
+            <img src="../images/loginPage/logo.svg" alt="Logo" height="24" />
+          </div>
+
+          <form class="d-none d-md-flex flex-grow-1 mx-4">
+            <div class="form-group has-search w-100">
               <span class="form-control-feedback">
                 <img
                   src="../images/search-icon.svg"
-                  class="w-50"
+                  height="20"
                   alt="search-icon"
                 />
               </span>
               <input
-                id="new"
                 type="text"
                 class="form-control border-0 fw-semibold"
                 placeholder="Search"
               />
             </div>
           </form>
-          <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
-            <li class="nav-item me-5">
-              <a class="nav-link" aria-current="page" href="#"
-                ><img
-                  src="../images/notification-icon.svg"
-                  alt="notification-icon"
-              /></a>
-            </li>
-            <a
-              href="#"
-              class="nav-item d-flex gap-4 justify-content-center align-items-center py-1 px-2 rounded-pill text-decoration-none text-black"
-            >
-              <img src="../images/profile.png" alt="profile" />
-              <span class="">John Doe</span>
 
-              <img src="../images/downward-arrow.svg" alt="downward-arrow" />
+          <div class="d-flex align-items-center gap-3">
+            <a href="#" class="btn btn-link p-2 text-dark d-none d-md-block">
+              <img src="../images/notification-icon.svg" alt="notification" />
             </a>
-          </ul>
+            <div class="dropdown">
+              <a
+                href="#"
+                class="d-flex align-items-center gap-2 text-decoration-none text-black py-1 px-3 rounded-pill"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  src="../images/profile.png"
+                  alt="profile"
+                  width="32"
+                  height="32"
+                  class="rounded-circle"
+                />
+                <span class="d-none d-lg-inline">John Doe</span>
+                <img src="../images/downward-arrow.svg" alt="arrow" />
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
+
+      <div class="d-md-none bg- px-3 pb-3 mt-2">
+        <div class="form-group has-search">
+          <span class="form-control-feedback">
+            <img
+              src="../images/search-icon.svg"
+              alt="search-icon"
+              height="20"
+              width="20"
+            />
+          </span>
+          <input
+            type="text"
+            class="form-control border-0 fw-semibold"
+            placeholder="Search"
+          />
+        </div>
+      </div>
     </header>
-    <div class="d-flex min-vh-100 w-100">
+
+    <!-- Main Container -->
+    <div class="d-flex min-vh-100">
+      <!-- Sidebar (Desktop) -->
       <aside
-        class="col-4 col-lg-2 md-bg-black px-5 py-3 d-flex flex-column gap-3"
+        class="d-none d-md-flex col-md-3 col-lg-2 bg-light flex-column gap-2 px-3 py-4 border-end"
       >
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
           <img
-            src="../images/dashboard-active.svg"
-            class="col-1"
+            src="../images/dashboard-default.svg"
             alt="dashboard"
+            width="20"
+            height="20"
           />
-          <span class="col-11">Dashboard</span>
+          <span>Dashboard</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full active px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none active"
         >
-          <img src="../images/graph-active.svg" class="col-1" alt="graph" />
-          <span class="col-11">Analysis</span>
+          <img
+            src="../images/graph-active.svg"
+            alt="graph"
+            width="20"
+            height="20"
+          />
+          <span>Analysis</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
-          <img src="../images/inbox-default.svg" class="col-1" alt="inbox" />
-          <span class="col-11">Inbox</span>
+          <img
+            src="../images/inbox-default.svg"
+            alt="inbox"
+            width="20"
+            height="20"
+          />
+          <span>Inbox</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
-          <img src="../images/clock-default.svg" class="col-1" alt="graph" />
-          <span class="col-11">History</span>
+          <img
+            src="../images/clock-default.svg"
+            alt="history"
+            width="20"
+            height="20"
+          />
+          <span>History</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
-          <img src="../images/user-default.svg" class="col-1" alt="graph" />
-          <span class="col-11">Users</span>
+          <img
+            src="../images/user-default.svg"
+            alt="users"
+            width="20"
+            height="20"
+          />
+          <span>Users</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
           <img
             src="../images/maintenance-default.svg"
-            class="col-1"
-            alt="graph"
+            alt="maintenance"
+            width="20"
+            height="20"
           />
-          <span class="col-11">Maintenance</span>
+          <span>Maintenance</span>
         </a>
         <a
           href="#"
-          class="fs-5 d-flex w-full default px-3 py-2 rounded-3 text-decoration-none gap-2 align-items-center"
+          class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
         >
-          <img src="../images/setting-default.svg" class="col-1" alt="graph" />
-          <span class="col-11">Settings</span>
+          <img
+            src="../images/setting-default.svg"
+            alt="settings"
+            width="20"
+            height="20"
+          />
+          <span>Settings</span>
         </a>
       </aside>
-      <main class="main-content col-10 d-flex flex-column gap-4 p-5">
-        <h1 class="text-black">Analysis</h1>
 
-        <div class="d-flex flex-column gap-4 bg-white p-3">
-          <div class="d-flex flex-column gap-3">
-            <h3 class="fs-4">One Column</h3>
-            <div class="form-outline" data-mdb-input-init>
+      <!-- Sidebar (Mobile) -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="sidebarOffcanvas"
+        aria-labelledby="sidebarOffcanvasLabel"
+      >
+        <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title fw-bold" id="sidebarOffcanvasLabel">
+            Menu
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <nav class="d-flex flex-column gap-2">
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/dashboard-default.svg"
+                alt="dashboard"
+                width="20"
+                height="20"
+              />
+              <span>Dashboard</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none active"
+            >
+              <img
+                src="../images/graph-active.svg"
+                alt="graph"
+                width="20"
+                height="20"
+              />
+              <span>Analysis</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/inbox-default.svg"
+                alt="inbox"
+                width="20"
+                height="20"
+              />
+              <span>Inbox</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/clock-default.svg"
+                alt="history"
+                width="20"
+                height="20"
+              />
+              <span>History</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/user-default.svg"
+                alt="users"
+                width="20"
+                height="20"
+              />
+              <span>Users</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/maintenance-default.svg"
+                alt="maintenance"
+                width="20"
+                height="20"
+              />
+              <span>Maintenance</span>
+            </a>
+            <a
+              href="#"
+              class="d-flex align-items-center gap-3 px-3 py-2 rounded-3 text-decoration-none default"
+            >
+              <img
+                src="../images/setting-default.svg"
+                alt="settings"
+                width="20"
+                height="20"
+              />
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <main class="main-content flex-grow-1 p-3 p-md-4 p-lg-5">
+        <div class="mb-4">
+          <h1 class="text-black mb-0">Analysis</h1>
+        </div>
+
+        <div class="bg-white p-3 p-md-4 p-lg-5 rounded shadow-sm">
+          <section class="mb-5">
+            <h3 class="fs-4 mb-4 fw-bold text-dark pb-2">One Column</h3>
+
+            <div class="form-outline mb-4" data-mdb-input-init>
               <input
                 type="text"
-                id="form12"
-                class="form-control"
-                placeholder="Name"
+                id="nameInput"
+                class="form-control form-control-lg"
               />
+              <label class="form-label" for="nameInput">Full Name</label>
             </div>
-            <select class="form-control" data-mdb-select-init>
+
+            <select
+              class="form-select form-select-lg mb-4"
+              data-mdb-select-init
+            >
+              <option value="" disabled selected>Choose option</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
@@ -177,27 +335,262 @@
               <option value="7">Seven</option>
               <option value="8">Eight</option>
             </select>
-            <div class="form-outline" data-mdb-input-init>
+
+            <div class="form-outline mb-4" data-mdb-input-init>
               <textarea
                 class="form-control"
                 id="textAreaExample"
                 rows="4"
-                placeholder="Multiple Line"
               ></textarea>
+              <label class="form-label" for="textAreaExample"
+                >Description</label
+              >
             </div>
-          </div>
-          <div class="">
-            <h3 class="fs-4">Two Column</h3>
-            <div class="d-flex row">
-              <div class="form-outline col-6" data-mdb-input-init>
-                <input type="text" id="typeText" class="form-control" />
-                <label class="form-label" for="typeText">Text input</label>
+          </section>
+
+          <section class="mb-5">
+            <h3 class="fs-4 mb-4 fw-bold text-dark pb-2">Two Column</h3>
+            <div class="row g-3 g-md-4">
+              <div class="col-12 col-md-6">
+                <div class="form-outline" data-mdb-input-init>
+                  <input
+                    type="email"
+                    id="emailInput"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="emailInput"
+                    >Email address</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="form-outline" data-mdb-input-init>
+                  <input
+                    type="text"
+                    id="fullNameInput"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="fullNameInput"
+                    >Full Name</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="form-outline" data-mdb-input-init>
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="passwordInput">Password</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <select class="form-select form-select-lg" data-mdb-select-init>
+                  <option value="" disabled selected>
+                    Select dropdown option
+                  </option>
+                  <option value="1">Option One</option>
+                  <option value="2">Option Two</option>
+                  <option value="3">Option Three</option>
+                  <option value="4">Option Four</option>
+                  <option value="5">Option Five</option>
+                </select>
               </div>
             </div>
-          </div>
+          </section>
+
+          <section class="mb-5">
+            <h3 class="fs-4 mb-4 fw-bold text-dark pb-2">Four Column</h3>
+            <div class="row g-3 g-md-4">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="form-outline" data-mdb-input-init>
+                  <input type="email" id="email1" class="form-control" />
+                  <label class="form-label" for="email1">Email address</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="form-outline" data-mdb-input-init>
+                  <input type="text" id="name1" class="form-control" />
+                  <label class="form-label" for="name1">Full Name</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div id="dotted" class="form-outline" data-mdb-input-init>
+                  <input type="text" class="form-control dotted-input" />
+                  <label class="form-label" for="dotted">Dotted Border</label>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div class="form-outline" data-mdb-input-init>
+                  <input
+                    type="text"
+                    id="dottedInput2"
+                    class="form-control dotted-input"
+                  />
+                  <label class="form-label" for="dottedInput2"
+                    >Dotted Border</label
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="fs-4 mb-4 fw-bold text-dark pb-2">
+              Other Design Elements
+            </h3>
+
+            <div class="mb-5">
+              <h5 class="mb-3 text-secondary">File Upload</h5>
+              <div class="mb-3">
+                <input
+                  class="form-control form-control-lg"
+                  type="file"
+                  id="formFile"
+                />
+                <div class="form-text">Maximum file size: 5MB</div>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="mb-3 text-secondary">Radio Buttons</h5>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioOptions"
+                    id="radioOption1"
+                    value="option1"
+                    checked
+                  />
+                  <label class="form-check-label" for="radioOption1">
+                    Type A
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioOptions"
+                    id="radioOption2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="radioOption2">
+                    Type B
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="radioOptions"
+                    id="radioOption3"
+                    value="option3"
+                  />
+                  <label class="form-check-label" for="radioOption3">
+                    Type C
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <h5 class="mb-3 text-secondary">Checkboxes</h5>
+              <div class="d-flex flex-wrap gap-3">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkboxOption1"
+                    value="option1"
+                  />
+                  <label class="form-check-label" for="checkboxOption1">
+                    Option 1
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkboxOption2"
+                    value="option2"
+                  />
+                  <label class="form-check-label" for="checkboxOption2">
+                    Option 2
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkboxOption3"
+                    value="option3"
+                  />
+                  <label class="form-check-label" for="checkboxOption3">
+                    Option 3
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex flex-wrap gap-3 justify-content-end mt-4 pt-3 border-top"
+            >
+              <button
+                type="reset"
+                class="btn btn-outline-secondary btn-lg px-4"
+              >
+                Reset Form
+              </button>
+              <button type="submit" class="btn btn-primary btn-lg px-5">
+                Submit
+              </button>
+            </div>
+          </section>
         </div>
       </main>
     </div>
-    <script src="../js/custom.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize all MDB inputs
+        const inputs = document.querySelectorAll(".form-outline");
+        inputs.forEach((input) => {
+          if (input.id != "dotted") {
+            console.log(input.id);
+            new mdb.Input(input);
+          } else {
+            console.log(input);
+          }
+        });
+
+        // Initialize all MDB selects
+        const selects = document.querySelectorAll("[data-mdb-select-init]");
+        selects.forEach((select) => {
+          new mdb.Select(select);
+        });
+
+        // Initialize datepickers if present
+        const datepickers = document.querySelectorAll(
+          "[data-mdb-datepicker-init]"
+        );
+        datepickers.forEach((datepicker) => {
+          new mdb.Datepicker(datepicker);
+        });
+      });
+    </script>
   </body>
 </html>
