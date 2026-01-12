@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
 }
 .bg-background {
   background-color: #fafafa;
@@ -55,10 +55,7 @@ ul,
 .default:hover {
   background-color: #fff3f4;
 }
-.active {
-  color: #c8242f;
-  background-color: #fff3f4;
-}
+
 .main-content {
   background-color: #fafafa;
 }
@@ -106,6 +103,9 @@ main {
 body {
   font-family: "Roboto", sans-serif;
 }
+nav{
+  border-bottom:  none;
+}
 .bg-background {
   background-color: #fafafa;
 }
@@ -155,13 +155,13 @@ ul,
   color: #aaa;
 }
 .default {
-  color: #3e3e3e;
+  color: #3e3e3e !important;
 }
 .default:hover {
   background-color: #fff3f4;
 }
-.active {
-  color: #c8242f;
+.active-nav-item {
+  color: #c8242f !important;
   background-color: #fff3f4;
 }
 .main-content {
@@ -171,16 +171,17 @@ main {
   color: #3e3e3e;
 }
 .link-sale {
-  text-decoration: none;
+  cursor: pointer !important;
+  text-decoration: none !important;
   color: #adadad;
 }
 .link-sale:hover {
-  color: #c8242f;
+  color: #c8242f !important;
 }
 .active-link-sale {
-  text-decoration: underline;
-  text-underline-offset: 10px;
-  color: #c8242f;
+  text-decoration: underline !important;
+  text-underline-offset: 10px !important;
+  color: #c8242f !important;
 }
 .circle {
   background-color: black;
@@ -208,9 +209,24 @@ main {
   border-radius: 5px;
 }
 
-.dotted-input {
-  border: none;
+.nav-hover{
+  margin-bottom: 3px;
+  color: #adadad !important;
+  cursor: pointer !important;
 }
-.dotted-input:active {
-  border: none;
+
+.nav-hover:hover{
+  color:#c8242f !important;
+}
+
+.nav-hover-active{
+  margin-bottom: 0px;
+  border-bottom: 3px solid #c8242f !important;
+  color: #c8242f !important;
+}
+
+.form-check-input[type="radio"]:checked{
+  border-color: #C8242F !important;
+  background-color: #C8242F !important;
+  box-shadow: none !important;
 }
